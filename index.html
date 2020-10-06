@@ -28,17 +28,19 @@
         y=e.createElement(n);y.async=!0;y.src='https://cdn.pendo.io/agent/static/'+apiKey+'/pendo.js';
         z=e.getElementsByTagName(n)[0];z.parentNode.insertBefore(y,z);})(window,document,'script','pendo');
 
-        const months = ["January", "February", "March", "April", "May", "June", "July"];
+        let accounts = [
+          { name: "Talend", user: "tgourdel", email: "tgourdel@talend.com" }
+        ];
 
         const random = Math.floor(Math.random() * months.length);
-        console.log(random, months[random])
+        console.log(random, accounts[random]["name"])
       
         // Call this whenever information about your visitors becomes available
         // Please use Strings, Numbers, or Bools for value types.
         pendo.initialize({
             visitor: {
-                id:              'VISITOR-UNIQUE-ID'   // Required if user is logged in
-                // email:        // Recommended if using Pendo Feedback, or NPS Email
+                id:              accounts[random]["user"]   // Required if user is logged in
+                email:           accounts[random]["email"]     // Recommended if using Pendo Feedback, or NPS Email
                 // full_name:    // Recommended if using Pendo Feedback
                 // role:         // Optional
 
@@ -47,7 +49,7 @@
             },
 
             account: {
-                id:           months[random] // Highly recommended
+                id:          accounts[random]["name"]  // Highly recommended
                 // name:         // Optional
                 // is_paying:    // Recommended if using Pendo Feedback
                 // monthly_value:// Recommended if using Pendo Feedback
