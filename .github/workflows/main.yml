@@ -51,4 +51,4 @@ jobs:
         pytest nothing.py
     - name: Run pytest my_first_test.py --browser=firefox --headless
       run: |
-        pytest examples/my_first_test.py --browser=firefox --headless -v -s --junit-xml=junit/test-results.xml
+        pytest my_first_test.py --browser=firefox --headless -v -s --junit-xml=junit/test-results.xml
