@@ -9,4 +9,4 @@ jobs:
         # uses: wei/wget@ca0a6b7f0fdd7ffbe9d4cec0b9696f2dc658d3c9
         uses: wei/wget@v1.1.1
         with:
-          args: -qO- https://httpbin.org/gethttp://www.my-remote-domain.co.uk/images/in/some/folder/my-image.jpg --header="User-Agent: Mozilla/5.0 (Windows NT 5.1; rv:23.0) Gecko/20100101 Firefox/23.0"
+          args: -qO- https://talend.github.io/pendo-product-tracking-demo/
