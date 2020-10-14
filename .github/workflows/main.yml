@@ -1,25 +1,12 @@
 name: Weekly cross-browser testing
 on: push
 jobs:
-  cross-browser:
+  wget:
     runs-on: ubuntu-latest
-    container:
-      image: cypress/browsers:node12.16.1-chrome80-ff73
-      options: --user 1001
     steps:
-      - name: Checkout Commit
-        uses: actions/checkout@v1
-      - name: Firefox Browser Tests
-        uses: cypress-io/github-action@v1
+      - name: Github Action for wget
+        # You may pin to the exact commit or the version.
+        # uses: wei/wget@ca0a6b7f0fdd7ffbe9d4cec0b9696f2dc658d3c9
+        uses: wei/wget@v1.1.1
         with:
-          browser: firefox
-          wait-on: 'https://talend.github.io/pendo-product-tracking-demo/'
-          wait-on-timeout: 300
-          config: defaultCommandTimeout=1000,pageLoadTimeout=1000,watchForFileChanges=false,video=false
-      - name: Chrome Browser Tests
-        uses: cypress-io/github-action@v1
-        with:
-          browser: chrome
-          wait-on: 'https://talend.github.io/pendo-product-tracking-demo/'
-          wait-on-timeout: 300
-          config: defaultCommandTimeout=1000,pageLoadTimeout=1000,watchForFileChanges=false,video=false
+          args: -qO- https://httpbin.org/gethttp://www.my-remote-domain.co.uk/images/in/some/folder/my-image.jpg --header="User-Agent: Mozilla/5.0 (Windows NT 5.1; rv:23.0) Gecko/20100101 Firefox/23.0"
