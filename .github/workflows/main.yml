@@ -43,6 +43,6 @@ jobs:
       run: |
         echo "def test_1(): pass" > nothing.py
         pytest nothing.py
-    - name: Run pytest my_first_test.py --browser=firefox --headless
+    - name: Run pytest test.py --browser=firefox --headless
       run: |
         pytest test.py --browser=firefox --headless -v -s --junit-xml=junit/test-results.xml
